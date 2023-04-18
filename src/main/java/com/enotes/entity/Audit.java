@@ -1,4 +1,4 @@
-package com.notes.entity;
+package com.enotes.entity;
 
 import java.util.Date;
 
@@ -25,13 +25,13 @@ public class Audit {
 
     @Temporal(TemporalType.DATE)
     @CreatedDate
-    @Column(name = "create_dt",nullable = false,updatable = false)
+    @Column(name = "create_dt", nullable = false, updatable = false)
     private Date cratedDate;
 
 
     @Temporal(TemporalType.DATE)
     @LastModifiedDate
-    @Column(name = "update_dt",nullable = false)
+    @Column(name = "update_dt", nullable = false)
     private Date updateDate;
 
 }

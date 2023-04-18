@@ -1,11 +1,12 @@
-package com.notes.config;
-
+package com.enotes.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.enotes.entity.UserDtls;
+import com.enotes.repository.UserRepository;
 
 public class UserDetailsServiceImpl implements UserDetailsService{
 

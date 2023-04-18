@@ -95,11 +95,10 @@ public class UserController {
     }
 
     @GetMapping("/deleteNotes/{id}")
-    public String deleteNotes(@PathVariable int id,HttpSession session) {
+    public String deleteNotes(@PathVariable int id, HttpSession session) {
 
-        Optional<Notes> notes=notesRepository.findById(id);
-        if(notes!=null)
-        {
+        Optional<Notes> notes = notesRepository.findById(id);
+        if (notes != null) {
             notesRepository.delete(notes.get());
             session.setAttribute("msg", "Notes Delete Successfully");
         }
@@ -130,20 +129,17 @@ public class UserController {
     }
 
     @PostMapping("/updateUser")
-    public String updateUser(@ModelAttribute UserDtls user,HttpSession session,Model m)
-    {
-        Optional<UserDtls> Olduser=userRepository.findById(user.getId());
+    public String updateUser(@ModelAttribute UserDtls user, HttpSession session, Model m) {
+        Optional<UserDtls> Olduser = userRepository.findById(user.getId());
 
-        if(Olduser!=null)
-        {
+        if (Olduser != null) {
             user.setPassword(Olduser.get().getPassword());
             user.setRole(Olduser.get().getRole());
             user.setEmail(Olduser.get().getEmail());
 
-            UserDtls updateUser=userRepository.save(user);
-            if(updateUser!=null)
-            {
-                m.addAttribute("user",updateUser);
+            UserDtls updateUser = userRepository.save(user);
+            if (updateUser != null) {
+                m.addAttribute("user", updateUser);
                 session.setAttribute("msg", "Profile Update Sucessfully..");
             }
 

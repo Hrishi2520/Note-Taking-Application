@@ -1,4 +1,4 @@
-package com.notes.config;
+package com.enotes.config;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -6,6 +6,8 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.enotes.entity.UserDtls;
 
 public class CustomUserDtls implements UserDetails {
 
